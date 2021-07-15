@@ -1,5 +1,6 @@
 package br.com.israel.personapi.api.model.input;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,8 +29,8 @@ public class PersonInput {
     @NotBlank
     @Size(min = 2, max = 11)
     private String cpf;
-    @Size(min = 0, max = 11)
-    private String birthDate;
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private LocalDate birthDate;
     @Valid
     @NotNull
     private List<PhoneInput> phones = new ArrayList<>();
