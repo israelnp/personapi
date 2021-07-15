@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class PersonModel {
     private Long id;
     private String firstName;
     private String lastName;
+    private LocalDate birthDate;
     private String cpf;
     private List<PhoneModel> phones = new ArrayList<>();
 }
